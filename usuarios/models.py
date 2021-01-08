@@ -6,6 +6,10 @@ from django.utils.translation import ugettext_lazy as _
 # Create your models here.
 
 class UserInfo(User):
+    """
+    Extende o modelo base de usuário (username, password, first_name,
+    last_name, email)    
+    """
     profile_pic = models.ImageField(upload_to="media/",             #todo Como realizar o upload de arquivos?
                                     blank=True,
                                     default="media/default.jpg", 
@@ -24,5 +28,5 @@ class UserInfo(User):
     def __str__(self):
         return self.username
 
-    #def get_absolute_url(self):                           #todo URL para o perfil do usuário
+    #def get_absolute_url(self):  #todo URL para o perfil do usuário
     #    return reverse('perfil', kwargs={'pk': self.id})
