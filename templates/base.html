@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicons -->
+        <!-- Favicons 
+        <link rel="apple-touch-icon" href="{% static 'img/icon-touch.png' %}">
+        <link rel="icon" sizes="192x192" href="{% static 'img/icon-touch.png' %}">
+        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+        <meta name="msapplication-TileColor" content="#113228">
+        <meta name="msapplication-TileImage" content="{% static 'img/icon-tile.png' %}"-->
+
+        <title>Home</title>
+
+        <!-- Bootstrap -->
+        <link href={% static 'css/bootstrap-4.3.1.css' %} rel="stylesheet">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+        <script src={% static 'js/jquery-3.3.1.min.js' %}></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src={% static 'js/popper.min.js' %}></script> 
+        <script src={% static 'js/bootstrap-4.3.1.js' %}></script>	
+        <!-- Material Icon Library e fontes >
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"-->
+    </head>
+  <body>
+        <nav id="navbar" class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+            <a class="navbar-brand" href="/home/">Mandos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Início</a>
+                    </li>
+					{% block contextmenu %}
+					# 
+					{% endblock contextmenu %}
+
+                    <li class="nav-item dropdown inactive">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Um item</a>
+                            <a class="dropdown-item" href="#">Dois item</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Outra coisa com nome absurdamente longo para um menu</a>
+                        </div>
+                    </li>
+                    <div class="divider"></div>
+                    <a class="nav-link active" href='/admin/'>Admin</a>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Busca" aria-label="Busca">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </nav>
+
+        {% block content %}
+        {% endblock content %}    
+      
+      
+  </body>
+</html>
